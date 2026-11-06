@@ -69,14 +69,13 @@
             padding: 35px 0;
             margin-top: 25px;
         }
-        /* DONJI DEO SA POJAČANOM POZADINOM BICYCLE KARTA */
-        .props-cards-bg {
-            background: linear-gradient(rgba(7,6,10,0.5), rgba(7,6,10,0.7)), url('https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+        /* DONJI DEO SA VAŠOM SLIKOM bb.jpg KAO POZADINOM */
+        .bottom-bb-bg {
+            background: linear-gradient(rgba(7,6,10,0.82), rgba(7,6,10,0.88)), url('bb.jpg') center/cover no-repeat;
             border-top: 2px solid rgba(212, 175, 55, 0.4);
             border-bottom: 2px solid rgba(212, 175, 55, 0.4);
-            padding: 40px 10px;
-            margin: 30px 0;
-            text-align: center;
+            padding: 40px 0;
+            margin-top: 30px;
         }
     </style>
 </head>
@@ -126,8 +125,8 @@
         </div>
     </div>
 
-    <!-- DONJI DEO SA SLIKAMA 1.jpg DO 5.jpg I POZADINOM KARATA -->
-    <div class="props-cards-bg">
+    <!-- SREDNJO-DONJI DEO SA SLIKAMA 1.jpg DO 5.jpg -->
+    <div style="padding: 20px 0;">
         <div style="width: 100%; max-width: 700px; margin: 0 auto; padding: 0 10px;">
             <h2 class="magic-title" style="font-size: 24px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; text-shadow: 0 0 15px rgba(0,0,0,0.9); text-align: center;">
                 ORLANDO MAGIC SHOW
@@ -158,25 +157,27 @@
         </div>
     </div>
 
-    <!-- KONTAKT SEKCIJA -->
-    <div class="container">
-        <div class="card" style="text-align: center; border: 2px solid #D4AF37; margin-top: 30px; background: rgba(18, 15, 36, 0.95);">
-            <h3 class="magic-title" style="font-size: 20px; margin-bottom: 15px;">Kontakt</h3>
-            <p style="font-size: 16px; color: #F3F4F6; margin-bottom: 10px;">
-                <i class="fa-solid fa-phone gold" style="margin-right: 8px;"></i> <a href="tel:0645556384" style="color: #F3F4F6; text-decoration: none;">064 555 6384</a>
-            </p>
-            <p style="font-size: 16px; color: #F3F4F6; margin-bottom: 10px;">
-                <i class="fa-solid fa-envelope gold" style="margin-right: 8px;"></i> <a href="mailto:orlando@gmail.com" style="color: #F3F4F6; text-decoration: none;">orlando@gmail.com</a>
-            </p>
-            <p style="font-size: 16px; color: #F3F4F6;">
-                <i class="fa-solid fa-location-dot gold" style="margin-right: 8px;"></i> Novi Sad
-            </p>
-        </div>
+    <!-- DONJI DEO SA bb.jpg POZADINOM, KONTAKTOM I FOOTER-OM -->
+    <div class="bottom-bb-bg">
+        <div class="container">
+            <div class="card" style="text-align: center; border: 2px solid #D4AF37; background: rgba(18, 15, 36, 0.92); backdrop-filter: blur(5px);">
+                <h3 class="magic-title" style="font-size: 20px; margin-bottom: 15px;">Kontakt</h3>
+                <p style="font-size: 16px; color: #F3F4F6; margin-bottom: 10px;">
+                    <i class="fa-solid fa-phone gold" style="margin-right: 8px;"></i> <a href="tel:0645556384" style="color: #F3F4F6; text-decoration: none;">064 555 6384</a>
+                </p>
+                <p style="font-size: 16px; color: #F3F4F6; margin-bottom: 10px;">
+                    <i class="fa-solid fa-envelope gold" style="margin-right: 8px;"></i> <a href="mailto:orlando@gmail.com" style="color: #F3F4F6; text-decoration: none;">orlando@gmail.com</a>
+                </p>
+                <p style="font-size: 16px; color: #F3F4F6;">
+                    <i class="fa-solid fa-location-dot gold" style="margin-right: 8px;"></i> Novi Sad
+                </p>
+            </div>
 
-        <!-- FOOTER -->
-        <div style="text-align: center; padding: 20px 0; border-top: 1px solid rgba(212, 175, 55, 0.2); margin-top: 20px;">
-            <p class="gold magic-title" style="font-size: 14px;">ORLANDO MAGIC SHOW</p>
-            <p style="font-size: 10px; color: #6B7280; margin-top: 4px;">&copy; Prvak Balkana u scenskoj magiji. Sva prava zadržana.</p>
+            <!-- FOOTER -->
+            <div style="text-align: center; padding: 20px 0; border-top: 1px solid rgba(212, 175, 55, 0.2); margin-top: 20px;">
+                <p class="gold magic-title" style="font-size: 14px;">ORLANDO MAGIC SHOW</p>
+                <p style="font-size: 10px; color: #6B7280; margin-top: 4px;">&copy; Prvak Balkana u scenskoj magiji. Sva prava zadržana.</p>
+            </div>
         </div>
     </div>
 
