@@ -9,7 +9,7 @@
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <script>
         tailwind.config = {
@@ -23,7 +23,7 @@
                         },
                         magic: {
                             black: '#07060A',
-                            dark: '#120F24',
+                            dark: '#0F0C1B',
                         }
                     },
                     fontFamily: {
@@ -35,47 +35,230 @@
         }
     </script>
     <style>
-        body {
-            background-color: #07060A;
-            color: #F3F4F6;
-        }
         .text-gold-glow {
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6), 0 0 30px rgba(212, 175, 55, 0.3);
+        }
+        .box-gold-glow {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
         }
         .glass-card {
-            background: rgba(18, 15, 36, 0.95);
-            border: 1px solid rgba(212, 175, 55, 0.35);
-            border-radius: 1rem;
+            background: rgba(15, 12, 27, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+        }
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.7);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
         }
         #sparkleCanvas {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
-            z-index: 1;
-        }
-        .content-container {
-            position: relative;
             z-index: 10;
         }
     </style>
 </head>
-<body class="font-sans antialiased">
+<body class="bg-magic-black text-gray-100 font-sans antialiased selection:bg-gold selection:text-black">
 
-    <!-- Animacija zvezdica u pozadini -->
+    <!-- Canvas sa svetlucavim zvezdicama -->
     <canvas id="sparkleCanvas"></canvas>
 
-    <div class="content-container w-full">
+    <!-- ZAGLAVLJE / HERO SEKCIJA (VAŠ ORIGINALNI IZGLED SA SLIKOM index1.jpg) -->
+    <header class="relative py-24 md:py-36 flex items-center justify-center border-b border-gold/30">
+        <!-- Pozadinska slika index1.jpg -->
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style="background-image: url('index1.jpg');"></div>
+        
+        <!-- Tamni preliv za odličnu čitljivost teksta -->
+        <div class="absolute inset-0 bg-gradient-to-b from-magic-black/90 via-magic-black/80 to-magic-black z-1"></div>
 
-        <!-- 1. HERO ZAGLAVLJE -->
-        <header class="w-full py-10 px-4 text-center border-b border-gold/30 bg-gradient-to-b from-magic-dark to-magic-black">
-            <div class="max-w-4xl mx-auto">
-                
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-gold mb-6 shadow-lg">
-                    <i class="fa-solid fa-trophy text-gold"></i>
-                    <span class="text-xs sm:text-sm font-semibold tracking-wider uppercase">Prvak Balkana u Scenskoj Magiji</span>
+        <div class="relative z-20 max-w-5xl mx-auto px-4 text-center">
+            
+            <!-- Balkan Champion Badge -->
+            <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-card border border-gold/40 text-gold mb-8 shadow-lg">
+                <i class="fa-solid font-bold fa-trophy text-gold"></i>
+                <span class="text-xs md:text-sm font-semibold tracking-widest uppercase">Prvak Balkana u Scenskoj Magiji</span>
+            </div>
+
+            <!-- Glavni Naslov -->
+            <h1 class="font-title text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-gold-light via-gold to-gold-dark text-gold-glow mb-6">
+                ORLANDO MAGIC SHOW
+            </h1>
+
+            <p class="text-xl md:text-3xl text-gray-200 font-light max-w-3xl mx-auto leading-relaxed mb-8 italic">
+                Jedinstven program vrhunskog mađioničara, prvaka Balkana u scenskoj magiji.
+            </p>
+
+            <div class="w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-10"></div>
+
+            <!-- Opis -->
+            <div class="glass-card p-6 md:p-10 rounded-2xl max-w-3xl mx-auto mb-10 shadow-2xl">
+                <p class="text-base md:text-xl text-gray-200 leading-relaxed font-normal">
+                    Dugogodišnje iskustvo garantuje nezaboravne trenutke gde se neverovatna veština pretvara u iluziju na korak ispred vas.
+                </p>
+            </div>
+
+            <!-- UMJESTO DUGMETA GALERIJA - SADA JE TU 5 HORIZONTALNIH POLJA ZA SLIKE -->
+            <div class="max-w-4xl mx-auto mb-6">
+                <p class="text-gold text-xs uppercase tracking-widest mb-3 font-semibold">Magični rekviziti i trenuci</p>
+                <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+                    <div class="glass-card p-2 text-center rounded-xl">
+                        <div class="h-20 bg-purple-950/60 rounded flex items-center justify-center border border-gold/20 mb-1"><i class="fa-solid fa-spade text-xl text-gold"></i></div>
+                        <span class="text-[10px] text-gray-300">Bicycle Karte</span>
+                    </div>
+                    <div class="glass-card p-2 text-center rounded-xl">
+                        <div class="h-20 bg-amber-950/60 rounded flex items-center justify-center border border-gold/20 mb-1"><i class="fa-solid fa-coins text-xl text-gold"></i></div>
+                        <span class="text-[10px] text-gray-300">Novčići</span>
+                    </div>
+                    <div class="glass-card p-2 text-center rounded-xl">
+                        <div class="h-20 rounded overflow-hidden border border-gold/30 mb-1"><img src="index1.jpg" alt="Orlando" class="w-full h-full object-cover"></div>
+                        <span class="text-[10px] text-gray-300">Orlando</span>
+                    </div>
+                    <div class="glass-card p-2 text-center rounded-xl">
+                        <div class="h-20 bg-blue-950/60 rounded flex items-center justify-center border border-gold/20 mb-1"><i class="fa-solid fa-masks-theater text-xl text-gold"></i></div>
+                        <span class="text-[10px] text-gray-300">Scena</span>
+                    </div>
+                    <div class="glass-card p-2 text-center rounded-xl col-span-2 sm:col-span-1">
+                        <div class="h-20 bg-indigo-950/60 rounded flex items-center justify-center border border-gold/20 mb-1"><i class="fa-solid fa-wand-magic-sparkles text-xl text-gold"></i></div>
+                        <span class="text-[10px] text-gray-300">Misterija</span>
+                    </div>
                 </div>
+            </div>
 
-                <!-- Slika mađioničara (index1.jpg
+        </div>
+    </header>
+
+    <!-- CLOSE-UP MAGIC SEKCIJA -->
+    <section class="relative py-20 bg-magic-dark border-b border-gold/20 overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://images.unsplash.com/photo-1511193311914-0346f16efe90?auto=format&fit=crop&w=1920&q=80');"></div>
+        
+        <div class="relative z-20 max-w-5xl mx-auto px-4 text-center">
+            <h2 class="font-title text-3xl md:text-5xl font-bold text-gold mb-6">
+                Scena & Close-Up Magija
+            </h2>
+            
+            <p class="text-lg md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-light mb-12">
+                Kako na sceni tako i za stolom <span class="text-gold font-semibold">(Close-up magic)</span> Orlando dovodi u pitanje postavke moderne nauke jer za te efekte nema objašnjenja niko, čak ni većina profesionalnih mađioničara.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+                <div class="glass-card p-6 rounded-xl">
+                    <div class="text-gold text-3xl mb-4"><i class="fa-solid fa-cards-blank"></i></div>
+                    <h3 class="font-title text-xl font-bold text-gold mb-2">Bicycle Karte</h3>
+                    <p class="text-gray-400 text-sm">Vrhunska manipulacija špilom karata na svega par centimetara od vaših očiju.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl">
+                    <div class="text-gold text-3xl mb-4"><i class="fa-solid fa-coins"></i></div>
+                    <h3 class="font-title text-xl font-bold text-gold mb-2">Novčići & Rekviziti</h3>
+                    <p class="text-gray-400 text-sm">Nestajanje i pretvaranje metalnih novčića uz vizuelne iluzije bez premca.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl">
+                    <div class="text-gold text-3xl mb-4"><i class="fa-solid fa-hat-wizard"></i></div>
+                    <h3 class="font-title text-xl font-bold text-gold mb-2">Scenski Šou</h3>
+                    <p class="text-gray-400 text-sm">Velike iluzije i interaktivni program sa publikom na velikoj sceni.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEKCIJA ZA REZERVACIJU (Dugme "Rezervišite nastup" postavljeno dole pred kraj) -->
+    <section id="rezervacija" class="py-20 bg-magic-dark border-t border-gold/20">
+        <div class="max-w-2xl mx-auto px-4 text-center">
+            
+            <!-- Istaknuto dugme za rezervaciju pred kraj -->
+            <div class="mb-12">
+                <a href="#kontakt-forma" class="inline-block px-10 py-5 rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-extrabold text-lg uppercase tracking-wider shadow-2xl hover:opacity-90 transition transform hover:scale-105 box-gold-glow">
+                    <i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Rezervišite Nastup
+                </a>
+            </div>
+
+            <div id="kontakt-forma" class="glass-card p-8 rounded-2xl text-left space-y-6 shadow-2xl">
+                <h2 class="font-title text-2xl font-bold text-gold mb-2 text-center">Kontakt / Upit za Termin</h2>
+                <p class="text-gray-300 text-sm mb-6 text-center">Za privatne proslave, korporativne događaje, festivale i scenske nastupe.</p>
+
+                <form onsubmit="event.preventDefault(); alert('Hvala na upitu! Orlando će vas kontaktirati ubrzo.');" class="space-y-6">
+                    <div>
+                        <label class="block text-gold text-sm font-semibold mb-2">Vaše Ime i Prezime</label>
+                        <input type="text" required placeholder="Npr. Marko Marković" class="w-full bg-magic-black/60 border border-gold/30 rounded-lg p-3 text-white focus:outline-none focus:border-gold">
+                    </div>
+                    <div>
+                        <label class="block text-gold text-sm font-semibold mb-2">Broj Telefona / Email</label>
+                        <input type="text" required placeholder="+381 6X XXX XXXX" class="w-full bg-magic-black/60 border border-gold/30 rounded-lg p-3 text-white focus:outline-none focus:border-gold">
+                    </div>
+                    <div>
+                        <label class="block text-gold text-sm font-semibold mb-2">Vrsta Događaja i Datum</label>
+                        <textarea rows="3" placeholder="Npr. Rođendan, Venčanje, Proslava firme... Datum: DD.MM.GGGG." class="w-full bg-magic-black/60 border border-gold/30 rounded-lg p-3 text-white focus:outline-none focus:border-gold"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-bold uppercase tracking-wider hover:opacity-90 transition box-gold-glow">
+                        Pošaljite Upit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-10 border-t border-gold/20 text-center text-gray-500 text-sm">
+        <p class="font-title text-gold mb-2">ORLANDO MAGIC SHOW</p>
+        <p>&copy; Prvak Balkana u scenskoj magiji. Sva prava zadržana.</p>
+    </footer>
+
+    <!-- PARTICLES SKRIPTA -->
+    <script>
+        const canvas = document.getElementById('sparkleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2.5 + 0.5;
+                this.speedY = Math.random() * -0.6 - 0.2;
+                this.opacity = Math.random();
+                this.fade = Math.random() * 0.015 + 0.005;
+            }
+            update() {
+                this.y += this.speedY;
+                this.opacity -= this.fade;
+                if (this.opacity <= 0 || this.y < 0) {
+                    this.reset();
+                    this.y = canvas.height + 10;
+                }
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(212, 175, 55, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 65; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+</body>
+</html>
