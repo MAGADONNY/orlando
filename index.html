@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sr" class="scroll-smooth">
+<html lang="hr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,6 @@
                         magic: {
                             black: '#07060A',
                             dark: '#0F0C1B',
-                            purple: '#2A1B4E',
                         }
                     },
                     fontFamily: {
@@ -37,19 +36,14 @@
     </script>
     <style>
         .text-gold-glow {
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6), 0 0 30px rgba(212, 175, 55, 0.3);
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
         }
         .box-gold-glow {
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
         }
         .glass-card {
-            background: rgba(15, 12, 27, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.25);
-        }
-        .glass-card:hover {
-            border-color: rgba(212, 175, 55, 0.7);
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+            background: rgba(15, 12, 27, 0.88);
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
         #sparkleCanvas {
             position: fixed;
@@ -58,52 +52,46 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 10;
+            z-index: 1;
         }
     </style>
 </head>
-<body class="bg-magic-black text-gray-100 font-sans antialiased selection:bg-gold selection:text-black">
+<body class="bg-magic-black text-gray-100 font-sans antialiased">
 
-    <!-- Canvas sa svetlucavim zvezdicama -->
+    <!-- Animacija zvezdica -->
     <canvas id="sparkleCanvas"></canvas>
 
-    <!-- ZAGLAVLJE / HERO SEKCIJA (Sa slikom index1.jpg kao pozadinom) -->
-    <header class="relative py-24 md:py-36 flex items-center justify-center border-b border-gold/30">
-        <!-- Pozadinska slika index1.jpg iz vašeg repozitorijuma -->
-        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat z-0" style="background-image: url('index1.jpg');"></div>
-        
-        <!-- Tamni slojevit preliv za odličnu čitljivost teksta -->
-        <div class="absolute inset-0 bg-gradient-to-b from-magic-black/90 via-magic-black/80 to-magic-black z-1"></div>
-
-        <div class="relative z-20 max-w-5xl mx-auto px-4 text-center">
+    <!-- ZAGLAVLJE (Hero sekcija s pozadinom index1.jpg) -->
+    <header class="relative z-10 py-12 px-4 text-center border-b border-gold/30" style="background: linear-gradient(rgba(7,6,10,0.85), rgba(7,6,10,0.95)), url('index1.jpg') center/cover no-repeat;">
+        <div class="max-w-4xl mx-auto">
             
-            <!-- Balkan Champion Badge -->
-            <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full glass-card border border-gold/40 text-gold mb-8 shadow-lg">
+            <!-- Balkan Champion značka -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-gold mb-6">
                 <i class="fa-solid fa-trophy text-gold"></i>
                 <span class="text-xs md:text-sm font-semibold tracking-widest uppercase">Prvak Balkana u Scenskoj Magiji</span>
             </div>
 
             <!-- Glavni Naslov -->
-            <h1 class="font-title text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-gold-light via-gold to-gold-dark text-gold-glow mb-6">
+            <h1 class="font-title text-4xl sm:text-6xl font-extrabold tracking-wider text-gold text-gold-glow mb-6">
                 ORLANDO MAGIC SHOW
             </h1>
 
-            <p class="text-xl md:text-3xl text-gray-200 font-light max-w-3xl mx-auto leading-relaxed mb-8 italic">
+            <p class="text-lg sm:text-2xl text-gray-200 font-light max-w-3xl mx-auto leading-relaxed mb-6 italic">
                 Jedinstven program vrhunskog mađioničara, prvaka Balkana u scenskoj magiji.
             </p>
 
-            <div class="w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-10"></div>
+            <div class="w-24 h-1 bg-gold mx-auto mb-8"></div>
 
-            <!-- Opis -->
-            <div class="glass-card p-6 md:p-10 rounded-2xl max-w-3xl mx-auto mb-10 shadow-2xl">
-                <p class="text-base md:text-xl text-gray-200 leading-relaxed font-normal">
+            <!-- Glavni opisni tekst -->
+            <div class="glass-card p-6 rounded-2xl max-w-2xl mx-auto mb-8">
+                <p class="text-base sm:text-lg text-gray-200 leading-relaxed">
                     Dugogodišnje iskustvo garantuje nezaboravne trenutke gde se neverovatna veština pretvara u iluziju na korak ispred vas.
                 </p>
             </div>
 
-            <!-- Dugmad -->
-            <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
-                <a href="#rezervacija" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-bold uppercase tracking-wider hover:opacity-90 transition transform hover:-translate-y-1 shadow-lg box-gold-glow">
+            <!-- Gumbovi -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#rezervacija" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-bold uppercase tracking-wider hover:opacity-90 transition box-gold-glow">
                     <i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Rezervišite Nastup
                 </a>
                 <a href="#galerija" class="w-full sm:w-auto px-8 py-4 rounded-full glass-card text-gold font-semibold uppercase tracking-wider hover:bg-gold/10 transition">
@@ -113,8 +101,45 @@
         </div>
     </header>
 
-    <!-- CLOSE-UP MAGIC SEKCIJA -->
-    <section class="relative py-20 bg-magic-dark border-b border-gold/20 overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('https://images.unsplash.com/photo-1511193311914-0346f16efe90?auto=format&fit=crop&w=1920&q=80');"></div>
-        
-        <div class="relative z-20 max-w-5xl mx-auto px-4
+    <!-- CLOSE-UP MAGIC OPIS -->
+    <section class="relative z-10 py-16 px-4 bg-magic-dark border-b border-gold/20 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="font-title text-3xl sm:text-4xl font-bold text-gold mb-6">
+                Scena & Close-Up Magija
+            </h2>
+            
+            <p class="text-base sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-light mb-10">
+                Kako na sceni tako i za stolom <span class="text-gold font-semibold">(Close-up magic)</span> Orlando dovodi u pitanje postavke moderne nauke jer za te efekte nema objašnjenja niko, čak ni većina profesionalnih mađioničara.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
+                <div class="glass-card p-6 rounded-xl">
+                    <div class="text-gold text-3xl mb-3"><i class="fa-solid fa-cards-blank"></i></div>
+                    <h3 class="font-title text-lg font-bold text-gold mb-2">Bicycle Karte</h3>
+                    <p class="text-gray-400 text-sm">Vrhunska manipulacija špilom karata na svega par centimetara od vaših očiju.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl">
+                    <div class="text-gold text-3xl mb-3"><i class="fa-solid fa-coins"></i></div>
+                    <h3 class="font-title text-lg font-bold text-gold mb-2">Novčići & Rekviziti</h3>
+                    <p class="text-gray-400 text-sm">Nestajanje i pretvaranje metalnih novčića uz vizuelne iluzije bez premca.</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl">
+                    <div class="text-gold text-3xl mb-3"><i class="fa-solid fa-hat-wizard"></i></div>
+                    <h3 class="font-title text-lg font-bold text-gold mb-2">Scenski Šou</h3>
+                    <p class="text-gray-400 text-sm">Velike iluzije i interaktivni program sa publikom na velikoj sceni.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIJA (Prostor za 5 slika) -->
+    <section id="galerija" class="relative z-10 py-16 px-4 max-w-5xl mx-auto">
+        <div class="text-center mb-10">
+            <h2 class="font-title text-3xl sm:text-4xl font-bold text-gold mb-2">Magični Trenuci</h2>
+            <p class="text-gray-400 text-xs uppercase tracking-widest">Kliknite na sliku za uvećanje</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            
+            <!-- Slika 1: Bicycle Karte -->
+            <div class="glass-card rounded-xl overflow-hidden cursor-pointer" onclick="openLightbox('https://images.unsplash.com/photo-1511193311914-0346f16efe90?auto=format&fit=crop&w=1200&q=80', 'Bicycle Karte')
