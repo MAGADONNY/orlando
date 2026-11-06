@@ -61,6 +61,35 @@
             margin-bottom: 20px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         }
+
+        /* ANIMACIJA ZA GORNJU SLIKU I HEADER */
+        header {
+            position: relative;
+            background: linear-gradient(to bottom, rgba(7,6,10,0.5), rgba(7,6,10,0.95)), url('index1.jpg') center top/cover no-repeat;
+            border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+            padding: 70px 15px;
+            text-align: center;
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            /* CSS Efekat učitavanja */
+            animation: heroFadeIn 1.5s ease-out forwards;
+        }
+
+        /* Ključni frejmovi za finu tranziciju */
+        @keyframes heroFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-15px) scale(1.02);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
         /* Srednji deo sa pozadinskim efektom */
         .closeup-cards-bg {
             background: linear-gradient(rgba(7,6,10,0.88), rgba(7,6,10,0.94)), url('https://images.unsplash.com/photo-1511193311914-0346f16efe90?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
@@ -69,7 +98,8 @@
             padding: 35px 0;
             margin-top: 25px;
         }
-        /* DONJI DEO SA VAŠOM SLIKOM bb.jpg KAO POZADINOM */
+
+        /* DONJI DEO SA bb.jpg POZADINOM */
         .bottom-bb-bg {
             background: linear-gradient(rgba(7,6,10,0.82), rgba(7,6,10,0.88)), url('bb.jpg') center/cover no-repeat;
             border-top: 2px solid rgba(212, 175, 55, 0.4);
@@ -81,8 +111,8 @@
 </head>
 <body>
 
-    <!-- GORNJI DEO SA POZADINSKOM SLIKOM index1.jpg -->
-    <header style="position: relative; background: linear-gradient(to bottom, rgba(7,6,10,0.5), rgba(7,6,10,0.95)), url('index1.jpg') center top/cover no-repeat; border-bottom: 2px solid rgba(212, 175, 55, 0.3); padding: 70px 15px; text-align: center; min-height: 420px; display: flex; flex-direction: column; justify-content: center;">
+    <!-- GORNJI DEO SA ANIMIRANOM POZADINSKOM SLIKOM index1.jpg -->
+    <header>
         <div class="container" style="position: relative; z-index: 2; width: 100%;">
             
             <div class="badge">
