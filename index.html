@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="bs" class="scroll-smooth">
+<html lang="sr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,14 +38,9 @@
         body {
             background-color: #07060A;
             color: #F3F4F6;
-            overflow-x: hidden;
-            overflow-y: auto;
         }
         .text-gold-glow {
             text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-        }
-        .gold-border {
-            border: 1px solid rgba(212, 175, 55, 0.35);
         }
         .glass-card {
             background: rgba(18, 15, 36, 0.85);
@@ -69,48 +64,42 @@
 </head>
 <body class="font-sans antialiased">
 
-    <!-- Animacija zvezdica u pozadini -->
+    <!-- Animacija zvezdica -->
     <canvas id="sparkleCanvas"></canvas>
 
     <div class="content-container w-full">
 
-        <!-- 1. ZAGLAVLJE / HERO SEKCIJA -->
-        <header class="w-full py-10 px-4 text-center border-b border-gold/30 bg-gradient-to-b from-magic-dark via-magic-black to-magic-black">
+        <!-- 1. HERO ZAGLAVLJE -->
+        <header class="w-full py-10 px-4 text-center border-b border-gold/30 bg-gradient-to-b from-magic-dark to-magic-black">
             <div class="max-w-3xl mx-auto">
                 
-                <!-- Balkan Champion Značka -->
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-gold mb-6 shadow-lg">
                     <i class="fa-solid fa-trophy text-gold"></i>
                     <span class="text-xs sm:text-sm font-semibold tracking-wider uppercase">Prvak Balkana u Scenskoj Magiji</span>
                 </div>
 
-                <!-- Slika Mađioničara (index1.jpg) u okrugla/ovalnoj kartici za savršen prikaz na telefonu -->
                 <div class="mb-6 flex justify-center">
                     <div class="relative w-44 h-44 sm:w-56 sm:h-56 rounded-full overflow-hidden p-1 bg-gradient-to-tr from-gold-dark via-gold to-gold-light shadow-2xl">
-                        <img src="index1.jpg" onerror="this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80'" alt="Mađioničar Orlando" class="w-full h-full object-cover rounded-full">
+                        <img src="index1.jpg" alt="Mađioničar Orlando" class="w-full h-full object-cover rounded-full">
                     </div>
                 </div>
 
-                <!-- Glavni Naslov -->
                 <h1 class="font-title text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-wider text-gold text-gold-glow mb-4">
                     ORLANDO MAGIC SHOW
                 </h1>
 
-                <!-- Originalni Tekst 1 -->
                 <p class="text-lg sm:text-2xl text-gray-200 font-light leading-relaxed mb-6 italic px-2">
                     Jedinstven program vrhunskog mađioničara, prvaka Balkana u scenskoj magiji.
                 </p>
 
                 <div class="w-24 h-1 bg-gold mx-auto mb-6"></div>
 
-                <!-- Originalni Tekst 2 -->
                 <div class="glass-card p-5 sm:p-8 mb-8 text-left sm:text-center">
                     <p class="text-base sm:text-lg text-gray-200 leading-relaxed font-normal">
                         Dugogodišnje iskustvo garantuje nezaboravne trenutke gde se neverovatna veština pretvara u iluziju na korak ispred vas.
                     </p>
                 </div>
 
-                <!-- Poziv na akciju (Dugmad) -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                     <a href="#rezervacija" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-gold-dark via-gold to-gold-light text-black font-bold uppercase tracking-wider shadow-lg hover:opacity-90 transition">
                         <i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Rezervišite Nastup
@@ -123,21 +112,19 @@
             </div>
         </header>
 
-        <!-- 2. CLOSE-UP MAGIC & ORIGINALNI TEKST 3 -->
+        <!-- 2. CLOSE-UP MAGIC SEKCIJA -->
         <section class="w-full py-12 px-4 bg-magic-dark border-b border-gold/20 text-center">
             <div class="max-w-3xl mx-auto">
                 <h2 class="font-title text-2xl sm:text-4xl font-bold text-gold mb-6">
                     Scena & Close-Up Magija
                 </h2>
                 
-                <!-- Originalni Tekst 3 -->
                 <div class="glass-card p-5 sm:p-8 mb-10 text-left sm:text-center border-l-4 border-l-gold">
                     <p class="text-base sm:text-xl text-gray-200 leading-relaxed font-light">
                         Kako na sceni tako i za stolom <strong class="text-gold font-semibold">(Close-up magic)</strong> Orlando dovodi u pitanje postavke moderne nauke jer za te efekte nema objašnjenja niko, čak ni većina profesionalnih mađioničara.
                     </p>
                 </div>
 
-                <!-- Tri kartice sa detaljima (Karte, Novčići, Scena) -->
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
                     <div class="glass-card p-5">
                         <div class="text-gold text-2xl mb-2"><i class="fa-solid fa-cards-blank"></i></div>
@@ -150,4 +137,13 @@
                         <p class="text-gray-300 text-xs">Vizuelne iluzije sa novčićima bez premca.</p>
                     </div>
                     <div class="glass-card p-5">
-                        <div class="text-gold text-2xl mb-2"><i class="fa-solid fa-hat-wizard
+                        <div class="text-gold text-2xl mb-2"><i class="fa-solid fa-hat-wizard"></i></div>
+                        <h3 class="font-title text-base font-bold text-gold mb-1">Scenski Šou</h3>
+                        <p class="text-gray-300 text-xs">Velike iluzije i interakcija sa publikom.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. GALERIJA SA 5 SLIKA (GARANTOVANO VIDLJIVO) -->
+        <section id="galer
