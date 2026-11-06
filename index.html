@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Sprečavanje keširanja da izmene odmah budu vidljive -->
+    <!-- Sprečavanje keširanja -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
     <title>ORLANDO MAGIC SHOW | Prvak Balkana u Scenskoj Magiji</title>
-    <!-- Google Fonts - Cinzel za luksuzni mađioničarski font -->
+    <!-- Google Fonts - Cinzel -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <!-- FontAwesome ikonice -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -61,38 +61,23 @@
             margin-bottom: 20px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         }
-        .btn-booking {
-            display: block;
-            width: 100%;
-            padding: 18px;
-            background: linear-gradient(to right, #AA7C11, #D4AF37, #FCE081);
-            color: #000;
-            font-weight: bold;
-            font-size: 16px;
-            text-transform: uppercase;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 30px;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.5);
-        }
-        /* Sekcija Scena & Close-Up Magija sa pozadinskim kartama */
-        .closeup-cards-bg {
-            background: linear-gradient(rgba(7,6,10,0.88), rgba(7,6,10,0.94)), url('https://images.unsplash.com/photo-1511193311914-0346f16efe90?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 35px 0;
-            margin-top: 25px;
-        }
-        /* Sekcija rekvizita sa pozadinom karata */
-        .props-cards-bg {
+        /* Pozadina sa motivom karata za donji deo */
+        .cards-bg-section {
             background: linear-gradient(rgba(7,6,10,0.85), rgba(7,6,10,0.92)), url('https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
             border-top: 1px solid rgba(212, 175, 55, 0.3);
             border-bottom: 1px solid rgba(212, 175, 55, 0.3);
             padding: 35px 15px;
             margin: 30px 0;
             text-align: center;
+        }
+        /* Slike preko cele širine */
+        .full-width-img {
+            width: 100%;
+            border-radius: 10px;
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            margin-bottom: 15px;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.7);
         }
     </style>
 </head>
@@ -127,31 +112,31 @@
         </div>
     </header>
 
-    <!-- SREDNJI DEO - SCENA & CLOSE-UP MAGIJA SA POZADINOM -->
-    <div class="closeup-cards-bg">
+    <!-- SREDNJI DEO - SCENA & CLOSE-UP MAGIJA -->
+    <div style="padding: 35px 0;">
         <div class="container" style="text-align: center;">
             <h2 class="magic-title" style="font-size: 26px; margin-bottom: 15px; text-shadow: 0 0 10px rgba(212,175,55,0.4);">
                 Scena & Close-Up Magija
             </h2>
 
-            <div class="card" style="border-left: 4px solid #D4AF37; text-align: left; backdrop-filter: blur(5px);">
+            <div class="card" style="border-left: 4px solid #D4AF37; text-align: left;">
                 <p style="font-size: 15px; color: #E5E7EB;">
                     Kako na sceni tako i za stolom <strong class="gold">(Close-up magic)</strong> Orlando dovodi u pitanje postavke moderne nauke jer za te efekte nema objašnjenja niko, čak ni većina profesionalnih mađioničara.
                 </p>
             </div>
 
             <div style="display: flex; flex-direction: column; gap: 10px; text-align: left;">
-                <div class="card" style="padding: 15px; backdrop-filter: blur(5px);">
+                <div class="card" style="padding: 15px;">
                     <div class="gold" style="font-size: 16px; font-weight: bold;"><i class="fa-solid fa-cards-blank"></i> Bicycle Karte</div>
                     <p style="font-size: 13px; color: #9CA3AF; margin-top: 4px;">Vrhunska manipulacija kartama tik ispred vaših očiju.</p>
                 </div>
 
-                <div class="card" style="padding: 15px; backdrop-filter: blur(5px);">
+                <div class="card" style="padding: 15px;">
                     <div class="gold" style="font-size: 16px; font-weight: bold;"><i class="fa-solid fa-coins"></i> Novčići & Rekviziti</div>
                     <p style="font-size: 13px; color: #9CA3AF; margin-top: 4px;">Vizuelne iluzije sa novčićima bez premca.</p>
                 </div>
 
-                <div class="card" style="padding: 15px; backdrop-filter: blur(5px);">
+                <div class="card" style="padding: 15px;">
                     <div class="gold" style="font-size: 16px; font-weight: bold;"><i class="fa-solid fa-hat-wizard"></i> Scenski Šou</div>
                     <p style="font-size: 13px; color: #9CA3AF; margin-top: 4px;">Velike iluzije i interakcija sa publikom.</p>
                 </div>
@@ -159,54 +144,35 @@
         </div>
     </div>
 
-    <!-- SEKCIJA SA POVEĆANIM SLIKAMA BEZ TEKSTA ISPOD -->
-    <div class="props-cards-bg">
+    <!-- DONJI DEO SA POZADINOM KARTA I SLIKAMA PREKO CELE ŠIRINE (1.jpg - 5.jpg) -->
+    <div class="cards-bg-section">
         <div class="container" style="position: relative; z-index: 2;">
-            <h2 class="magic-title" style="font-size: 24px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px; text-shadow: 0 0 10px rgba(212,175,55,0.6);">
+            <h2 class="magic-title" style="font-size: 26px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; text-shadow: 0 0 10px rgba(212,175,55,0.6);">
                 ORLANDO MAGIC SHOW
             </h2>
-            <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;">
-                
-                <div style="background: rgba(18, 15, 36, 0.9); border: 2px solid rgba(212, 175, 55, 0.5); border-radius: 10px; padding: 4px; text-align: center;">
-                    <div style="height: 100px; border-radius: 8px; overflow: hidden;">
-                        <img src="1.jpg" alt="Rekvizit 1" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </div>
 
-                <div style="background: rgba(18, 15, 36, 0.9); border: 2px solid rgba(212, 175, 55, 0.5); border-radius: 10px; padding: 4px; text-align: center;">
-                    <div style="height: 100px; border-radius: 8px; overflow: hidden;">
-                        <img src="2.jpg" alt="Rekvizit 2" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </div>
-
-                <div style="background: rgba(18, 15, 36, 0.9); border: 2px solid rgba(212, 175, 55, 0.5); border-radius: 10px; padding: 4px; text-align: center;">
-                    <div style="height: 100px; border-radius: 8px; overflow: hidden;">
-                        <img src="3.jpg" alt="Rekvizit 3" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </div>
-
-                <div style="background: rgba(18, 15, 36, 0.9); border: 2px solid rgba(212, 175, 55, 0.5); border-radius: 10px; padding: 4px; text-align: center;">
-                    <div style="height: 100px; border-radius: 8px; overflow: hidden;">
-                        <img src="4.jpg" alt="Rekvizit 4" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </div>
-
-                <div style="background: rgba(18, 15, 36, 0.9); border: 2px solid rgba(212, 175, 55, 0.5); border-radius: 10px; padding: 4px; text-align: center;">
-                    <div style="height: 100px; border-radius: 8px; overflow: hidden;">
-                        <img src="5.jpg" alt="Rekvizit 5" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </div>
-
-            </div>
+            <!-- Slike 1 do 5 raspoređene preko cele širine, jedna ispod druge bez teksta -->
+            <img src="1.jpg" alt="Orlando Magic 1" class="full-width-img">
+            <img src="2.jpg" alt="Orlando Magic 2" class="full-width-img">
+            <img src="3.jpg" alt="Orlando Magic 3" class="full-width-img">
+            <img src="4.jpg" alt="Orlando Magic 4" class="full-width-img">
+            <img src="5.jpg" alt="Orlando Magic 5" class="full-width-img">
         </div>
     </div>
 
+    <!-- KONTAKT SEKCIJA (UMESTO DUGMETA ZA REZERVACIJU) -->
     <div class="container">
-        <!-- DUGME ZA REZERVACIJU -->
-        <div style="margin: 30px 0;">
-            <a href="tel:+381600000000" class="btn-booking">
-                <i class="fa-solid fa-wand-magic-sparkles"></i> Rezervišite Nastup
-            </a>
+        <div class="card" style="text-align: center; border: 2px solid #D4AF37; margin-top: 30px;">
+            <h3 class="magic-title" style="font-size: 20px; margin-bottom: 15px;">Kontakt</h3>
+            <p style="font-size: 16px; color: #F3F4F6; margin-bottom: 10px;">
+                <i class="fa-solid fa-phone gold" style="margin-right: 8px;"></i> <a href="tel:0645556384" style="color: #F3F4F6; text-decoration: none;">064 555 6384</a>
+            </p>
+            <p style="font-size: 16px; color: #F3F4F6; margin-bottom: 10px;">
+                <i class="fa-solid fa-envelope gold" style="margin-right: 8px;"></i> <a href="mailto:orlando@gmail.com" style="color: #F3F4F6; text-decoration: none;">orlando@gmail.com</a>
+            </p>
+            <p style="font-size: 16px; color: #F3F4F6;">
+                <i class="fa-solid fa-location-dot gold" style="margin-right: 8px;"></i> Novi Sad
+            </p>
         </div>
 
         <!-- FOOTER -->
