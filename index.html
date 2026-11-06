@@ -1,1 +1,127 @@
+```html
+<!DOCTYPE html>
+<html lang="sr" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORLANDO MAGIC SHOW | Prvak Balkana u Scenskoj Magiji</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#FBBF24',
+                            500: '#F59E0B',
+                            600: '#D97706',
+                            glow: '#FFE57F'
+                        },
+                        magic: {
+                            dark: '#0a0914',
+                            card: '#131127',
+                            accent: '#7c3aed',
+                            crimson: '#9f1239'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'Georgia', 'serif'],
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0914;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        /* Dramatic Background Image Layer with Gradient Overlay */
+        .magic-bg-overlay {
+            background-image: 
+                radial-gradient(circle at 50% 20%, rgba(124, 58, 237, 0.25) 0%, rgba(10, 9, 20, 0.85) 65%, rgba(10, 9, 20, 0.98) 100%),
+                linear-gradient(to bottom, rgba(10, 9, 20, 0.7), rgba(10, 9, 20, 0.95)),
+                url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .font-cinzel {
+            font-family: 'Cinzel', Georgia, serif;
+        }
+        .gold-text-gradient {
+            background: linear-gradient(135deg, #FFF5C0 0%, #F59E0B 50%, #B45309 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border-gradient {
+            border-image: linear-gradient(to bottom right, #FBBF24, #7c3aed, #D97706) 1;
+        }
+        .magic-card-glow {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .magic-card-glow:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px -15px rgba(124, 58, 237, 0.35), 0 0 20px 2px rgba(245, 158, 11, 0.2);
+        }
+        .curtain-overlay {
+            background: radial-gradient(circle at center, transparent 30%, rgba(10, 9, 20, 0.95) 90%);
+        }
+    </style>
+</head>
+<body class="relative min-h-screen flex flex-col justify-between magic-bg-overlay">
+
+    <!-- Interactive Canvas Particles Background -->
+    <canvas id="sparkleCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-70"></canvas>
+                <span>Rezervišite Nastup</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="relative z-10 flex-grow">
+        <!-- Hero Section with uploaded image as background -->
+        <section class="relative py-24 lg:py-32 px-4 overflow-hidden bg-cover bg-center bg-no-repeat rounded-b-3xl shadow-2xl border-b border-gold-500/30" style="background-image: linear-gradient(to bottom, rgba(10, 9, 20, 0.55) 0%, rgba(10, 9, 20, 0.85) 70%, rgba(10, 9, 20, 1) 100%), linear-gradient(to right, rgba(10, 9, 20, 0.9) 0%, rgba(10, 9, 20, 0.4) 50%, rgba(10, 9, 20, 0.9) 100%), url('1000004557.jpg');">
+            <div class="max-w-4xl mx-auto text-center space-y-6 relative z-10">
+                
+                <!-- Champion Badge -->
+                <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-gold-400/60 bg-black/60 backdrop-blur-md text-gold-400 font-medium text-xs sm:text-sm tracking-wider uppercase shadow-xl">
+                    <i class="fa-solid fa-trophy text-gold-400 text-base"></i>
+                    <span>Prvak Balkana u Scenskoj Magiji</span>
+                </div>
+
+                <!-- Main Title -->
+                <h1 class="font-cinzel text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-tight drop-shadow-[0_10px_20px_rgba(0,0,0,0.9)]">
+                    ORLANDO <span class="gold-text-gradient block mt-1">MAGIC SHOW</span>
+                </h1>
+
+                <!-- Intro Text -->
+                <p class="text-xl sm:text-2xl text-purple-100 font-serif leading-relaxed drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)] max-w-3xl mx-auto font-medium">
+                    Jedinstven program vrhunskog mađioničara, prvaka Balkana u scenskoj magiji.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="pt-6 flex flex-wrap gap-4 justify-center">
+                    <button onclick="openModal()" class="px-8 py-4 rounded-full bg-gradient-to-r from-gold-500 via-amber-500 to-amber-600 text-black font-extrabold text-base tracking-wide hover:brightness-110 shadow-2xl shadow-amber-500/50 transition transform hover:-translate-y-1">
+                        <i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Rezervišite Nastup
+                    </button>
+                    <a href="#galerija" class="px-7 py-4 rounded-full bg-black/60 border border-gold-400/50 text-gold-300 font-bold text-base hover:bg-gold-500 hover:text-black transition shadow-lg backdrop-blur-md">
+                        Pogledajte Galeriju
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="flex items-center justify-center space-x-4 max-w-4xl mx-auto my-8 opacity-80">
+<!-- ... existing code -->
+```
