@@ -3,182 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Sprečavanje keširanja -->
+    <title>ORLANDO MAGIC SHOW</title>
+    
+    <!-- Meta tagovi protiv keširanja -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-    <title>ORLANDO MAGIC SHOW | Prvak Balkana u Scenskoj Magiji</title>
-    <!-- Google Fonts - Cinzel -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <!-- FontAwesome ikonice -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <style>
-        * {
-            box-sizing: border-box;
+        body {
             margin: 0;
             padding: 0;
-        }
-        body {
-            background-color: #07060A;
-            color: #F3F4F6;
-            font-family: 'Montserrat', sans-serif;
-            line-height: 1.6;
-        }
-        .gold {
-            color: #D4AF37;
-        }
-        .magic-title {
-            font-family: 'Cinzel', serif;
-            font-weight: 900;
-            color: #FCE081;
-            text-shadow: 0 0 25px rgba(212, 175, 55, 0.8), 0 0 50px rgba(0, 0, 0, 0.9);
-            letter-spacing: 3px;
-        }
-        .container {
-            max-width: 650px;
-            margin: 0 auto;
-            padding: 20px 15px;
-        }
-        .card {
-            background: rgba(18, 15, 36, 0.9);
-            border: 1px solid rgba(212, 175, 55, 0.35);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        .badge {
-            display: inline-block;
-            padding: 8px 16px;
-            background: rgba(18, 15, 36, 0.85);
-            border: 1px solid #D4AF37;
-            border-radius: 20px;
-            color: #D4AF37;
-            font-size: 11px;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-        }
-        /* Pozadina sa motivom karata za donji deo */
-        .cards-bg-section {
-            background: linear-gradient(rgba(7,6,10,0.85), rgba(7,6,10,0.92)), url('https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
-            border-top: 1px solid rgba(212, 175, 55, 0.3);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            padding: 35px 15px;
-            margin: 30px 0;
+            background-color: #0b0711;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
             text-align: center;
         }
-        /* Slike preko cele širine */
-        .full-width-img {
+
+        h1 {
+            color: #d4af37;
+            margin: 30px 0;
+            letter-spacing: 2px;
+        }
+
+        /* Stil za galeriju sa 5 slika u jednom redu */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .gallery-row {
+            display: flex;
             width: 100%;
-            border-radius: 10px;
-            border: 2px solid rgba(212, 175, 55, 0.4);
-            margin-bottom: 15px;
+            gap: 10px; /* Razmak između slika */
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gallery-row img {
+            flex: 1;
+            width: 0;
+            height: auto;
             object-fit: cover;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+            border-radius: 8px;
+            border: 1px solid #d4af37;
+        }
+
+        /* Prilagođavanje za manje ekrane (mobitele) */
+        @media (max-width: 768px) {
+            .gallery-row {
+                flex-wrap: wrap;
+            }
+            .gallery-row img {
+                flex: 1 1 45%; /* Na mobilnom po 2 slike u redu */
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- GORNJI DEO SA POZADINSKOM SLIKOM index1.jpg -->
-    <header style="position: relative; background: linear-gradient(to bottom, rgba(7,6,10,0.5), rgba(7,6,10,0.95)), url('index1.jpg') center top/cover no-repeat; border-bottom: 2px solid rgba(212, 175, 55, 0.3); padding: 70px 15px; text-align: center; min-height: 420px; display: flex; flex-direction: column; justify-content: center;">
-        <div class="container" style="position: relative; z-index: 2; width: 100%;">
-            
-            <div class="badge">
-                <i class="fa-solid fa-trophy"></i> Prvak Balkana u Scenskoj Magiji
-            </div>
+    <h1>ORLANDO MAGIC SHOW</h1>
 
-            <!-- FONT ZA ORLANDO -->
-            <h1 class="magic-title" style="font-size: 42px; line-height: 1.1; margin-bottom: 15px;">
-                ORLANDO MAGIC SHOW
-            </h1>
-
-            <p style="font-size: 17px; font-style: italic; color: #E5E7EB; margin-bottom: 20px; text-shadow: 0 2px 6px rgba(0,0,0,0.9);">
-                Jedinstven program vrhunskog mađioničara, prvaka Balkana u scenskoj magiji.
-            </p>
-
-            <div style="width: 80px; height: 3px; background: #D4AF37; margin: 0 auto 20px auto;"></div>
-
-            <!-- Glavni opis -->
-            <div class="card" style="text-align: center; backdrop-filter: blur(6px);">
-                <p style="font-size: 15px; color: #D1D5DB;">
-                    Dugogodišnje iskustvo garantuje nezaboravne trenutke gde se neverovatna veština pretvara u iluziju na korak ispred vas.
-                </p>
-            </div>
-
-        </div>
-    </header>
-
-    <!-- SREDNJI DEO - SCENA & CLOSE-UP MAGIJA -->
-    <div style="padding: 35px 0;">
-        <div class="container" style="text-align: center;">
-            <h2 class="magic-title" style="font-size: 26px; margin-bottom: 15px; text-shadow: 0 0 10px rgba(212,175,55,0.4);">
-                Scena & Close-Up Magija
-            </h2>
-
-            <div class="card" style="border-left: 4px solid #D4AF37; text-align: left;">
-                <p style="font-size: 15px; color: #E5E7EB;">
-                    Kako na sceni tako i za stolom <strong class="gold">(Close-up magic)</strong> Orlando dovodi u pitanje postavke moderne nauke jer za te efekte nema objašnjenja niko, čak ni većina profesionalnih mađioničara.
-                </p>
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 10px; text-align: left;">
-                <div class="card" style="padding: 15px;">
-                    <div class="gold" style="font-size: 16px; font-weight: bold;"><i class="fa-solid fa-cards-blank"></i> Bicycle Karte</div>
-                    <p style="font-size: 13px; color: #9CA3AF; margin-top: 4px;">Vrhunska manipulacija kartama tik ispred vaših očiju.</p>
-                </div>
-
-                <div class="card" style="padding: 15px;">
-                    <div class="gold" style="font-size: 16px; font-weight: bold;"><i class="fa-solid fa-coins"></i> Novčići & Rekviziti</div>
-                    <p style="font-size: 13px; color: #9CA3AF; margin-top: 4px;">Vizuelne iluzije sa novčićima bez premca.</p>
-                </div>
-
-                <div class="card" style="padding: 15px;">
-                    <div class="gold" style="font-size: 16px; font-weight: bold;"><i class="fa-solid fa-hat-wizard"></i> Scenski Šou</div>
-                    <p style="font-size: 13px; color: #9CA3AF; margin-top: 4px;">Velike iluzije i interakcija sa publikom.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- DONJI DEO SA POZADINOM KARTA I SLIKAMA PREKO CELE ŠIRINE (1.jpg - 5.jpg) -->
-    <div class="cards-bg-section">
-        <div class="container" style="position: relative; z-index: 2;">
-            <h2 class="magic-title" style="font-size: 26px; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; text-shadow: 0 0 10px rgba(212,175,55,0.6);">
-                ORLANDO MAGIC SHOW
-            </h2>
-
-            <!-- Slike 1 do 5 raspoređene preko cele širine, jedna ispod druge bez teksta -->
-            <img src="1.jpg" alt="Orlando Magic 1" class="full-width-img">
-            <img src="2.jpg" alt="Orlando Magic 2" class="full-width-img">
-            <img src="3.jpg" alt="Orlando Magic 3" class="full-width-img">
-            <img src="4.jpg" alt="Orlando Magic 4" class="full-width-img">
-            <img src="5.jpg" alt="Orlando Magic 5" class="full-width-img">
-        </div>
-    </div>
-
-    <!-- KONTAKT SEKCIJA (UMESTO DUGMETA ZA REZERVACIJU) -->
-    <div class="container">
-        <div class="card" style="text-align: center; border: 2px solid #D4AF37; margin-top: 30px;">
-            <h3 class="magic-title" style="font-size: 20px; margin-bottom: 15px;">Kontakt</h3>
-            <p style="font-size: 16px; color: #F3F4F6; margin-bottom: 10px;">
-                <i class="fa-solid fa-phone gold" style="margin-right: 8px;"></i> <a href="tel:0645556384" style="color: #F3F4F6; text-decoration: none;">064 555 6384</a>
-            </p>
-            <p style="font-size: 16px; color: #F3F4F6; margin-bottom: 10px;">
-                <i class="fa-solid fa-envelope gold" style="margin-right: 8px;"></i> <a href="mailto:orlando@gmail.com" style="color: #F3F4F6; text-decoration: none;">orlando@gmail.com</a>
-            </p>
-            <p style="font-size: 16px; color: #F3F4F6;">
-                <i class="fa-solid fa-location-dot gold" style="margin-right: 8px;"></i> Novi Sad
-            </p>
-        </div>
-
-        <!-- FOOTER -->
-        <div style="text-align: center; padding: 20px 0; border-top: 1px solid rgba(212, 175, 55, 0.2); margin-top: 20px;">
-            <p class="gold magic-title" style="font-size: 14px;">ORLANDO MAGIC SHOW</p>
-            <p style="font-size: 10px; color: #6B7280; margin-top: 4px;">&copy; Prvak Balkana u scenskoj magiji. Sva prava zadržana.</p>
+    <!-- Sekcija sa 5 slika u jednoj liniji preko širine stranice -->
+    <div class="gallery-container">
+        <div class="gallery-row">
+            <img src="slika1.jpg" alt="Magic Show 1">
+            <img src="slika2.jpg" alt="Magic Show 2">
+            <img src="slika3.jpg" alt="Magic Show 3">
+            <img src="slika4.jpg" alt="Magic Show 4">
+            <img src="slika5.jpg" alt="Magic Show 5">
         </div>
     </div>
 
